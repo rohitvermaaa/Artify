@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Artify</string>
+    <string name="imagebtnlarge">imageBtnLarge</string>
+    <string name="imagebtnmedium">imageBtnMedium</string>
+    <string name="imagebtnsmall">imageBtnSmall</string>
+    <string name="brush_image">Brush Image</string>
 </resources>
