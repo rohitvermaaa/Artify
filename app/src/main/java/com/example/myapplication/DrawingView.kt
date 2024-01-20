@@ -10,7 +10,9 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintSet.Motion
+import kotlinx.android.synthetic.main.dialog_color_choose.view.*
 import java.lang.reflect.Type
 
 class DrawingView (context: Context, attrs : AttributeSet) : View(context, attrs ){
@@ -98,8 +100,11 @@ class DrawingView (context: Context, attrs : AttributeSet) : View(context, attrs
         mDrawPaint!!.strokeWidth = mBrushSize
     }
 
-    internal inner class CustomPath(var color : Int , var brushThickness : Float) : Path() {
-
+    fun setColor(color: Int) {
+        this.color = color
     }
 
+    internal inner class CustomPath(var color : Int, var brushThickness : Float) : Path() {
+
+    }
 }

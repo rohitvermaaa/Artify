@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/white"
+    >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginVertical="10dp"
+            >
+
+            <ImageButton
+                android:id="@+id/blackColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/blackcolorpallete"
+                android:src="@drawable/blackcolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/orangeColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/orangecolorpallete"
+                android:src="@drawable/orangecolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/blueColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/bluecolorpallete"
+                android:src="@drawable/bluecolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/cyanColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/cyancolorpallete"
+                android:src="@drawable/cyancolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/redColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/redcolorpallete"
+                android:src="@drawable/redcolorpallete"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginVertical="10dp"
+            >
+
+            <ImageButton
+                android:id="@+id/whiteColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/whitecolorpallete"
+                android:src="@drawable/whitecolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/greenColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/greencolorpallete"
+                android:src="@drawable/greencolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/magentaColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/magentacolorpallete"
+                android:src="@drawable/magentacolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/yellowColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/yellowcolorpallete"
+                android:src="@drawable/yellowcolorpallete"
+                android:background="@color/white"
+                />
+
+            <ImageButton
+                android:id="@+id/indigoColorIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:contentDescription="@string/indigocolorpallete"
+                android:src="@drawable/indigocolorpallete"
+                android:background="@color/white"
+                />
+
+        </LinearLayout>
+
+</LinearLayout>
