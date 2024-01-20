@@ -1,19 +1,11 @@
 package com.example.myapplication
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintSet.Motion
-import kotlinx.android.synthetic.main.dialog_color_choose.view.*
-import java.lang.reflect.Type
 
 class DrawingView (context: Context, attrs : AttributeSet) : View(context, attrs ){
 

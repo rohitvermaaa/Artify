@@ -17,8 +17,8 @@
 
             <ImageButton
                 android:id="@+id/blackColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/blackcolorpallete"
                 android:src="@drawable/blackcolorpallete"
@@ -27,8 +27,8 @@
 
             <ImageButton
                 android:id="@+id/orangeColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/orangecolorpallete"
                 android:src="@drawable/orangecolorpallete"
@@ -37,8 +37,8 @@
 
             <ImageButton
                 android:id="@+id/blueColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/bluecolorpallete"
                 android:src="@drawable/bluecolorpallete"
@@ -47,8 +47,8 @@
 
             <ImageButton
                 android:id="@+id/cyanColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/cyancolorpallete"
                 android:src="@drawable/cyancolorpallete"
@@ -57,8 +57,8 @@
 
             <ImageButton
                 android:id="@+id/redColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/redcolorpallete"
                 android:src="@drawable/redcolorpallete"
@@ -76,8 +76,8 @@
 
             <ImageButton
                 android:id="@+id/whiteColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/whitecolorpallete"
                 android:src="@drawable/whitecolorpallete"
@@ -86,8 +86,8 @@
 
             <ImageButton
                 android:id="@+id/greenColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/greencolorpallete"
                 android:src="@drawable/greencolorpallete"
@@ -96,8 +96,8 @@
 
             <ImageButton
                 android:id="@+id/magentaColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/magentacolorpallete"
                 android:src="@drawable/magentacolorpallete"
@@ -106,8 +106,8 @@
 
             <ImageButton
                 android:id="@+id/yellowColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/yellowcolorpallete"
                 android:src="@drawable/yellowcolorpallete"
@@ -116,8 +116,8 @@
 
             <ImageButton
                 android:id="@+id/indigoColorIB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:contentDescription="@string/indigocolorpallete"
                 android:src="@drawable/indigocolorpallete"
