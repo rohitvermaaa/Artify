@@ -11,7 +11,6 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
@@ -39,7 +38,6 @@ class MainActivity : AppCompatActivity() {
                 requestStoragePermission()
             }
         }
-
     }
 
     private fun showBrushSizeChooserDialog(){
@@ -104,36 +102,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun requestStoragePermission(){
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                arrayOf( Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())) {
-            Toast.makeText(this, "Need Permission", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                STORAGE_PERMISSION_CODE)
-        }
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK){
-            if (requestCode == GALLERY){
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == STORAGE_PERMISSION_CODE) {
                 try {
-                    if(data!!.data != null){
+                    if (data != null && data.data != null) {
                         ivBackground.visibility = View.VISIBLE
                         ivBackground.setImageURI(data.data)
+                    } else {
+                        Toast.makeText(this, "Image Corrupted", Toast.LENGTH_SHORT).show()
                     }
-                    else{
-                        Toast.makeText(this, "Image Corrupted" , Toast.LENGTH_SHORT).show()
-                    }
-                }
-                catch (e : java.lang.Exception){
-                    Toast.makeText(this, "Something Went Wrong" , Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
                     e.printStackTrace()
                 }
             }
         }
+    }
+
+    private fun requestStoragePermission() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        intent.type = "image/*"  // You can specify a MIME type or */* for all types
+        startActivityForResult(intent, STORAGE_PERMISSION_CODE)
     }
 
     override fun onRequestPermissionsResult(
