@@ -1,9 +1,18 @@
 package com.example.myapplication
 
+import android.Manifest
+import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
 import kotlinx.android.synthetic.main.dialog_color_choose.*
@@ -20,6 +29,17 @@ class MainActivity : AppCompatActivity() {
         ibColorPallete.setOnClickListener{
             showColorChooserDialog()
         }
+
+        ibGallery.setOnClickListener {
+            if (isReadStorageAllowed()){
+                val pickPhotoIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                startActivityForResult(pickPhotoIntent, GALLERY)
+            }
+            else{
+                requestStoragePermission()
+            }
+        }
+
     }
 
     private fun showBrushSizeChooserDialog(){
@@ -83,4 +103,63 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun requestStoragePermission(){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                arrayOf( Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())) {
+            Toast.makeText(this, "Need Permission", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                STORAGE_PERMISSION_CODE)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK){
+            if (requestCode == GALLERY){
+                try {
+                    if(data!!.data != null){
+                        ivBackground.visibility = View.VISIBLE
+                        ivBackground.setImageURI(data.data)
+                    }
+                    else{
+                        Toast.makeText(this, "Image Corrupted" , Toast.LENGTH_SHORT).show()
+                    }
+                }
+                catch (e : java.lang.Exception){
+                    Toast.makeText(this, "Something Went Wrong" , Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode== STORAGE_PERMISSION_CODE){
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(this, "Permission Granted" , Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "Permission Denied" , Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun isReadStorageAllowed() : Boolean{
+        val result = ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)
+        return result == PackageManager.PERMISSION_GRANTED
+    }
+
+    companion object{
+        private const val STORAGE_PERMISSION_CODE = 1
+        private const val GALLERY = 2
+    }
+
 }

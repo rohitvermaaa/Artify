@@ -16,4 +16,6 @@
     <string name="yellowcolorpallete">YellowColorPallete</string>
     <string name="indigocolorpallete">IndigoColorPallete</string>
     <string name="black">Black</string>
+    <string name="bg">bg</string>
+    <string name="choosefromgallery">chooseFromGallery</string>
 </resources>
