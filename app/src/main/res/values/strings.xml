@@ -18,4 +18,6 @@
     <string name="black">Black</string>
     <string name="bg">bg</string>
     <string name="choosefromgallery">chooseFromGallery</string>
+    <string name="undo">undo</string>
+    <string name="save_in_gallery_and_share">Save in Gallery and Share</string>
 </resources>

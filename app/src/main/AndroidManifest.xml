@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.Write_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -30,6 +31,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
+        <provider
+            android:authorities="com.example.myapplication.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER"
+                android:resource="@xml/path"/>
+        </provider>
     </application>
 
 </manifest>
