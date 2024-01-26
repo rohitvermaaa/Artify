@@ -20,4 +20,5 @@
     <string name="choosefromgallery">chooseFromGallery</string>
     <string name="undo">undo</string>
     <string name="save_in_gallery_and_share">Save in Gallery and Share</string>
+    <string name="please_wait">Please Wait...</string>
 </resources>

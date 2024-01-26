@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.media.MediaScannerConnection
 import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.MediaStore
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             drawing_View.onClickUndo()
         }
 
-        ibSave.setOnClickListener {
+        ibSave.setOnClickListener {this
             BitmapAsyncTask(getBitmapFromView(flDrawingViewContainer)).execute()
         }
     }
@@ -203,6 +204,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this@MainActivity, "Something Went Wrong While Saving the File", Toast.LENGTH_SHORT).show()
             }
+            MediaScannerConnection.scanFile(this@MainActivity, arrayOf(result),null){
+                path , uri -> val shareIntent = Intent()
+                shareIntent.action = Intent.ACTION_SEND
+                shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+                shareIntent.type = "image/png"
+                startActivity(Intent.createChooser(shareIntent, "Share"))
+            }
         }
     }
 
@@ -210,5 +218,4 @@ class MainActivity : AppCompatActivity() {
         private const val STORAGE_PERMISSION_CODE = 1
         private const val GALLERY = 2
     }
-
 }
