@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
 
     <FrameLayout
         android:id="@+id/flDrawingViewContainer"
@@ -37,28 +38,16 @@
     </FrameLayout>
 
     <ImageButton
-        android:id="@+id/ibColorPallete"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:background="#303030"
-        android:contentDescription="@string/color_palete"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_color_palete"
-        app:layout_constraintEnd_toStartOf="@+id/ibBrush"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/flDrawingViewContainer" />
-
-    <ImageButton
         android:id="@+id/ibBrush"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:padding="3dp"
         android:src="@drawable/ic_brush"
         android:contentDescription="@string/brush_image"
-        android:background="#303030"
+        android:background="#000000"
         android:scaleType="fitXY"
         android:layout_margin="5dp"
-        app:layout_constraintStart_toEndOf="@id/ibColorPallete"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ibUndo"
         app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -67,27 +56,42 @@
         android:id="@+id/ibUndo"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:padding="3dp"
         android:src="@drawable/ic_undo"
         android:contentDescription="@string/undo"
-        android:background="#303030"
+        android:background="#000000"
         android:scaleType="fitXY"
         android:layout_margin="5dp"
         app:layout_constraintStart_toEndOf="@id/ibBrush"
-        app:layout_constraintEnd_toStartOf="@id/ibGallery"
+        app:layout_constraintEnd_toStartOf="@id/ibColorPallete"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
+    <ImageButton
+        android:id="@+id/ibColorPallete"
+        android:padding="3dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="#000000"
+        android:contentDescription="@string/color_palete"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_color_palete"
+        app:layout_constraintEnd_toStartOf="@+id/ibGallery"
+        app:layout_constraintStart_toEndOf="@id/ibUndo"
+        app:layout_constraintTop_toBottomOf="@id/flDrawingViewContainer" />
 
     <ImageButton
         android:id="@+id/ibGallery"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:padding="3dp"
         android:layout_margin="5dp"
-        android:background="#303030"
+        android:background="#000000"
         android:contentDescription="@string/choosefromgallery"
         android:scaleType="fitXY"
         android:src="@drawable/ic_gallery"
-        app:layout_constraintStart_toEndOf="@id/ibUndo"
+        app:layout_constraintStart_toEndOf="@id/ibColorPallete"
         app:layout_constraintEnd_toStartOf="@id/ibSave"
         app:layout_constraintTop_toBottomOf="@id/flDrawingViewContainer" />
 
@@ -95,8 +99,9 @@
         android:id="@+id/ibSave"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:padding="3dp"
         android:layout_margin="5dp"
-        android:background="#303030"
+        android:background="#000000"
         android:contentDescription="@string/save_in_gallery_and_share"
         android:scaleType="fitXY"
         android:src="@drawable/ic_save"
