@@ -31,14 +31,14 @@ Overall, the UI of this paint app is deliberately crafted to be simple, intuitiv
 ## Screenshots
 
 <div align="center">
-  <img src="screenshot/1.jpg" alt="Screenshot 1" width="250"/>
-  <img src="screenshot/2.jpg" alt="Screenshot 2" width="250"/>
-  <img src="screenshot/3.jpg" alt="Screenshot 3" width="250"/>
+  <img src="screenshot/1.jpg" alt="Logo" width="250"/>
+  <img src="screenshot/2.jpg" alt="Brush Size" width="250"/>
+  <img src="screenshot/3.jpg" alt="Color Pallete" width="250"/>
 </div>
 <div align="center">
-  <img src="screenshot/4.jpg" alt="Screenshot 4" width="250"/>
-  <img src="screenshot/5.jpg" alt="Screenshot 5" width="250"/>
-  <img src="screenshot/6.jpg" alt="Screenshot 6" width="250"/>
+  <img src="screenshot/4.jpg" alt="Canvas" width="250"/>
+  <img src="screenshot/5.jpg" alt="Drawing Over Image" width="250"/>
+  <img src="screenshot/6.jpg" alt="Saving and Sharing" width="250"/>
 </div>
 
 ## How to Use
